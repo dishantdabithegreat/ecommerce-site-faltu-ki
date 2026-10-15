@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anon — Modern Luxury &amp; Lifestyle eCommerce</title>
+  
+  <meta name="description" content="Discover premium menswear, womenswear, luxury timepieces, handcrafted jewelry, and studio acoustics with fast worldwide shipping.">
+  <link rel="shortcut icon" href="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=64&q=80" type="image/x-icon">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT TOP BAR -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="announce-promo">
+        <span class="promo-chip">LIMITED OFFER</span>
+        <span>Use coupon <strong>ANON20</strong> for 20% off your entire order!</span>
+      </div>
+      <div class="announce-links">
+        <span>⚡ Free Express Delivery on orders over $150</span>
+        <a href="#trust-features">Why Choose Anon?</a>
+        <a href="/admin" style="color: #ff6b81; font-weight:700;">👑 Admin Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. STICKY MAIN HEADER -->
+  <header class="header-main">
+    <div class="container">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="header-logo">
+        <div class="logo-badge">A</div>
+        <div class="logo-text">Anon<span>.</span></div>
+      </a>
+
+      <!-- Predictive Search Field -->
+      <div class="header-search-container">
+        <div class="header-search-wrapper">
+          <ion-icon name="search-outline" class="header-search-icon"></ion-icon>
+          <input type="text" id="main-search-input" class="search-field" placeholder="Search luxury jackets, timepieces, sneakers, jewelry..." autocomplete="off">
+          <span class="search-shortcut-badge">Press /</span>
+        </div>
+        <!-- Live Predictive Search Dropdown -->
+        <div id="search-dropdown" class="search-results-dropdown"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Account Menu / Login -->
+        <button id="btn-account-nav" class="action-btn" title="My Account / Sign In">
+          <ion-icon name="person-outline"></ion-icon>
+        </button>
+
+        <!-- Wishlist -->
+        <button id="btn-wishlist-nav" class="action-btn" title="Saved Wishlist">
+          <ion-icon name="heart-outline"></ion-icon>
+          <span class="action-badge wish-badge">0</span>
+        </button>
+
+        <!-- Cart Drawer Button -->
+        <button id="btn-cart-nav" class="action-btn" title="Shopping Bag">
+          <ion-icon name="bag-handle-outline"></ion-icon>
+          <span class="action-badge cart-badge">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 3. DEPARTMENT SUB-HEADER -->
+  <nav class="header-nav">
+    <div class="container">
+      <ul class="nav-links">
+        <li class="nav-item active" onclick="document.querySelector('[data-category=\'all\']').click();">All Collections</li>
+        <li class="nav-item" onclick="document.querySelector('[data-category=\'mens\']').click();">Menswear <span class="nav-badge-pill">NEW</span></li>
+        <li class="nav-item" onclick="document.querySelector('[data-category=\'womens\']').click();">Womenswear</li>
+        <li class="nav-item" onclick="document.querySelector('[data-category=\'footwear\']').click();">Footwear</li>
+        <li class="nav-item" onclick="document.querySelector('[data-category=\'watches\']').click();">Timepieces</li>
+        <li class="nav-item" onclick="document.querySelector('[data-category=\'jewelry\']').click();">Fine Jewelry</li>
+        <li class="nav-item" onclick="document.querySelector('[data-category=\'electronics\']').click();">Acoustics &amp; Tech</li>
+        <li class="nav-item" onclick="document.querySelector('[data-category=\'fragrance\']').click();">Fragrances</li>
+      </ul>
+      <div class="nav-right-actions">
+        <span>📍 Ships Worldwide</span>
+        <span>🛡️ 100% Authentic Guarantee</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 4. HERO SLIDER SECTION -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-slider-wrap">
+        
+        <div id="hero-slide-item" class="hero-slide">
+          <div class="hero-content">
+            <span class="hero-badge-tag">Autumn / Winter 2026 Collection</span>
+            <h1 class="hero-title">Modern Elegance <span>Redefined.</span></h1>
+            <p class="hero-subtitle">Experience pure architectural silhouettes and handcrafted European craftsmanship tailored for the discerning individual.</p>
+            <div class="hero-actions">
+              <a href="#catalog-start" class="btn-hero-primary">
+                Shop Collection <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+              <button class="btn-hero-secondary" onclick="window.AnonStore.openQuickView(1);">
+                Quick Inspect
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Arrows -->
+        <button id="hero-prev-btn" class="hero-nav-arrow prev" title="Previous Slide">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <button id="hero-next-btn" class="hero-nav-arrow next" title="Next Slide">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CATEGORY QUICK-SWITCH PILL BAR & SORTING -->
+  <section class="category-filter-section" id="catalog-start">
+    <div class="container">
+      <div class="category-filter-container">
+        
+        <div class="category-pills">
+          <button class="cat-pill active" data-category="all">
+            <ion-icon name="apps-outline"></ion-icon> All Collections
+          </button>
+          <button class="cat-pill" data-category="mens">
+            <ion-icon name="shirt-outline"></ion-icon> Menswear
+          </button>
+          <button class="cat-pill" data-category="womens">
+            <ion-icon name="woman-outline"></ion-icon> Womenswear
+          </button>
+          <button class="cat-pill" data-category="footwear">
+            <ion-icon name="footsteps-outline"></ion-icon> Footwear
+          </button>
+          <button class="cat-pill" data-category="watches">
+            <ion-icon name="watch-outline"></ion-icon> Watches
+          </button>
+          <button class="cat-pill" data-category="jewelry">
+            <ion-icon name="diamond-outline"></ion-icon> Jewelry
+          </button>
+          <button class="cat-pill" data-category="electronics">
+            <ion-icon name="headset-outline"></ion-icon> Audio &amp; Tech
+          </button>
+          <button class="cat-pill" data-category="fragrance">
+            <ion-icon name="color-wand-outline"></ion-icon> Fragrance
+          </button>
+        </div>
+
+        <select id="catalog-sort-select" class="catalog-sort-select">
+          <option value="default">Sort by: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Highest Customer Rating</option>
+        </select>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FLASH DEALS COUNTDOWN BANNER -->
+  <section class="flash-deals-banner">
+    <div class="container">
+      <div class="flash-deals-card">
+        <div class="flash-info">
+          <span style="font-size:11px; font-weight:800; color:#ff6b81; text-transform:uppercase; letter-spacing:1px;">TODAY'S FLASH EVENT</span>
+          <h3>Exclusive 24-Hour Clearance Event</h3>
+          <p>Claim up to 35% off on selected luxury outerwear, acoustics, and handcrafted leather footwear.</p>
+        </div>
+        
+        <div class="countdown-timer-group">
+          <div class="timer-box">
+            <div id="timer-hours" class="timer-digits">05</div>
+            <div class="timer-label">Hours</div>
+          </div>
+          <div class="timer-box">
+            <div id="timer-minutes" class="timer-digits">42</div>
+            <div class="timer-label">Mins</div>
+          </div>
+          <div class="timer-box">
+            <div id="timer-seconds" class="timer-digits">18</div>
+            <div class="timer-label">Secs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DYNAMIC PRODUCT CATALOG -->
+  <section class="catalog-section">
+    <div class="container">
+      
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title">Curated Luxury Catalog</h2>
+          <p class="section-subtitle">Precision engineered with uncompromising materials and timeless aesthetic refinement.</p>
+        </div>
+      </div>
+
+      <!-- Real Dynamic Grid populated via Flask API -->
+      <div id="products-grid" class="product-grid">
+        <!-- Rendered by backend.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. "WHY CHOOSE ANON" TRUST PILLARS -->
+  <section class="trust-section" id="trust-features">
+    <div class="container">
+      <div class="trust-grid">
+        
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <ion-icon name="airplane-outline"></ion-icon>
+          </div>
+          <div class="trust-info">
+            <h4>Free Global Express</h4>
+            <p>Fast tracked courier shipping on all orders exceeding $150.</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <ion-icon name="shield-checkmark-outline"></ion-icon>
+          </div>
+          <div class="trust-info">
+            <h4>30-Day Risk-Free</h4>
+            <p>Complimentary doorstep returns and seamless full refunds.</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+          </div>
+          <div class="trust-info">
+            <h4>Bank-Grade Security</h4>
+            <p>256-Bit SSL encrypted payments supporting COD, Cards, and UPI.</p>
+          </div>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <ion-icon name="chatbubbles-outline"></ion-icon>
+          </div>
+          <div class="trust-info">
+            <h4>24/7 Dedicated Concierge</h4>
+            <p>Always available client assistance for styling &amp; order inquiries.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. VIP NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-card">
+        <div class="newsletter-content">
+          <span class="newsletter-badge">BECOME AN INSIDER</span>
+          <h3 class="newsletter-title">Subscribe to the Anon VIP Circle</h3>
+          <p class="newsletter-desc">Unlock secret sales, private collection debuts, and receive a $25 welcome gift credit toward your first acquisition.</p>
+          <form class="newsletter-form newsletter-form-row">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+            <button type="submit" class="btn-newsletter-submit">Join VIP Club ✨</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. MODERN FOOTER -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <div class="logo-text" style="color:#fff; font-size:24px;">Anon<span>.</span></div>
+          <p>A contemporary luxury shopping destination dedicated to timeless aesthetics, artisanal tailoring, and uncompromising precision.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-circle" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#" class="social-circle" title="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="#" class="social-circle" title="Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="#" class="social-circle" title="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog-start">Menswear Outerwear</a></li>
+            <li><a href="#catalog-start">Womenswear Silks</a></li>
+            <li><a href="#catalog-start">Artisanal Footwear</a></li>
+            <li><a href="#catalog-start">Aerospace Watches</a></li>
+            <li><a href="#catalog-start">Diamond &amp; Gold Jewelry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="window.AnonStore.openOrdersModal();">Order Tracking</a></li>
+            <li><a href="#trust-features">Shipping Policies</a></li>
+            <li><a href="#trust-features">Returns &amp; Exchanges</a></li>
+            <li><a href="/admin">Administrator Portal</a></li>
+            <li><a href="mailto:support@anon.com">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Anon Atelier</a></li>
+            <li><a href="#">Sustainability Pledges</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Privacy Charter</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-row">
+        <div>&copy; 2026 Anon Luxury eCommerce Inc. All Rights Reserved.</div>
+        <div style="display:flex; gap:16px;">
+          <span>🔒 256-Bit SSL Certified</span>
+          <span>💳 VISA • MasterCard • RuPay • UPI • COD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- Slide-Out Shopping Bag Drawer -->
+  <div id="cart-drawer" class="cart-drawer-overlay">
+    <div class="cart-drawer-panel">
+      <div class="cart-drawer-header">
+        <h3>Shopping Bag 🛍️</h3>
+        <button id="btn-close-cart" class="modal-close-btn-custom">&times;</button>
+      </div>
+      
+      <div id="cart-items-box" class="cart-items-scroll">
+        <!-- Injected via backend.js -->
+      </div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-promo-row">
+          <input type="text" id="cart-promo-code" class="cart-promo-input" placeholder="Promo code (e.g. ANON20)">
+          <button id="btn-apply-promo" class="btn-promo-apply">Apply</button>
+        </div>
+
+        <div class="cart-totals-summary">
+          <div class="totals-row">
+            <span>Subtotal</span>
+            <span id="drawer-subtotal">$0.00</span>
+          </div>
+          <div id="drawer-discount-row" class="totals-row" style="color:var(--accent-green); display:none;">
+            <span>VIP Promo Discount</span>
+            <span id="drawer-discount">-$0.00</span>
+          </div>
+          <div class="totals-row">
+            <span>Estimated Shipping</span>
+            <span style="color:var(--accent-green); font-weight:700;">FREE</span>
+          </div>
+          <div class="totals-row grand-total">
+            <span>Grand Total</span>
+            <span id="drawer-grand-total" style="color:var(--primary);">$0.00</span>
+          </div>
+        </div>
+
+        <button id="drawer-checkout-btn" class="btn-checkout-drawer">
+          Proceed to Checkout <ion-icon name="arrow-forward-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div id="quickview-modal" class="modal-overlay-bg">
+    <div class="modal-card modal-card-wide">
+      <button class="modal-close-btn-custom" onclick="window.AnonStore.closeQuickView();">&times;</button>
+      
+      <div class="quickview-layout">
+        <div class="quickview-img-box">
+          <img id="qv-img" src="" alt="Product Preview">
+        </div>
+        <div class="quickview-info-box">
+          <span id="qv-cat" class="quickview-tag">CATEGORY</span>
+          <h3 id="qv-title" class="quickview-title">Product Title</h3>
+          
+          <div class="product-price-box" style="margin-bottom:14px;">
+            <span id="qv-price" class="current-price" style="font-size:1.6rem;">$0.00</span>
+            <span id="qv-oldprice" class="old-price" style="font-size:1rem;"></span>
+          </div>
+
+          <p id="qv-desc" class="quickview-desc">Description goes here.</p>
+
+          <div class="quickview-chips-group">
+            <div class="quickview-chips-label">Select Size / Fit:</div>
+            <div class="quickview-size-chips">
+                <button type="button" class="size-chip active" data-size="S">S</button>
+                <button type="button" class="size-chip" data-size="M">M</button>
+                <button type="button" class="size-chip" data-size="L">L</button>
+                <button type="button" class="size-chip" data-size="XL">XL</button>
+            </div>
+          </div>
+
+          <p id="qv-stock" style="font-size:12px; color:var(--accent-green); font-weight:700; margin-bottom:16px;">In Stock</p>
+
+          <div style="display:flex; gap:12px; align-items:center;">
+            <div style="display:flex; align-items:center; background:var(--bg-subtle); border-radius:var(--radius-full); padding:6px 14px; gap:12px; font-weight:700;">
+              <button onclick="let i = document.getElementById('qv-qty'); i.value = Math.max(1, parseInt(i.value)-1);">-</button>
+              <input type="number" id="qv-qty" value="1" min="1" style="width:36px; text-align:center; border:none; background:transparent; font-weight:700; font-size:14px;">
+              <button onclick="let i = document.getElementById('qv-qty'); i.value = parseInt(i.value)+1;">+</button>
+            </div>
+            <button id="qv-add-btn" class="primary-btn" style="flex:1;">
+              <ion-icon name="bag-handle-outline"></ion-icon> Add to Bag
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wishlist Modal -->
+  <div id="wishlist-modal" class="modal-overlay-bg">
+    <div class="modal-card">
+      <button class="modal-close-btn-custom" onclick="window.AnonStore.closeWishlistModal();">&times;</button>
+      <h3 class="custom-modal-title">Saved Wishlist ❤️</h3>
+      <div id="wishlist-items-box" style="max-height:360px; overflow-y:auto;">
+        <!-- Injected via backend.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- User Account Menu Modal -->
+  <div id="account-menu-modal" class="modal-overlay-bg">
+    <div class="modal-card">
+      <button class="modal-close-btn-custom" onclick="window.AnonStore.closeAccountMenu();">&times;</button>
+      <h3 class="custom-modal-title">My Account</h3>
+      
+      <div style="background:var(--bg-subtle); border-radius:var(--radius-md); padding:16px; margin-bottom:20px;">
+        <h4 id="acc-name" style="font-size:16px; font-weight:800; color:var(--text-primary);">User Name</h4>
+        <p id="acc-email" style="font-size:13px; color:var(--text-secondary); margin-bottom:6px;">user@example.com</p>
+        <span id="acc-role" style="font-size:11px; font-weight:800; background:var(--bg-dark); color:#fff; padding:3px 10px; border-radius:var(--radius-full);">VIP Customer</span>
+      </div>
+
+      <a id="acc-admin-btn" href="/admin" class="primary-btn" style="background:var(--accent-green); margin-bottom:12px; display:none;">
+        👑 Enter Admin Portal
+      </a>
+      <button class="primary-btn" onclick="window.AnonStore.closeAccountMenu(); window.AnonStore.openOrdersModal();" style="margin-bottom:12px; background:var(--bg-dark);">
+        📦 View My Past Orders
+      </button>
+      <button class="primary-btn" onclick="window.AnonStore.handleSignOut();" style="background:#ef4444;">
+        🚪 Sign Out
+      </button>
+    </div>
+  </div>
+
+  <!-- Sign In / Register Auth Modal -->
+  <div id="auth-modal" class="modal-overlay-bg" data-mode="login">
+    <div class="modal-card">
+      <button class="modal-close-btn-custom" onclick="window.AnonStore.closeAuthModal();">&times;</button>
+      <h3 id="auth-title" class="custom-modal-title">Welcome Back</h3>
+      
+      <form id="auth-form">
+        <div id="auth-name-group" class="custom-form-group" style="display:none;">
+          <label>Full Name</label>
+          <input type="text" id="auth-name" placeholder="Alexander McQueen">
+        </div>
+        <div class="custom-form-group">
+          <label>Email Address</label>
+          <input type="email" id="auth-email" placeholder="client@anon.com" required>
+        </div>
+        <div class="custom-form-group">
+          <label>Password</label>
+          <input type="password" id="auth-password" placeholder="•••••••• (6+ characters)" required>
+        </div>
+        <button type="submit" id="auth-submit-btn" class="primary-btn" style="margin-top:20px;">
+          Sign In ✨
+        </button>
+      </form>
+
+      <a href="/login" style="display:block; margin-top:14px; color:var(--text-secondary); font-size:12px; text-align:center;">Open the dedicated login page</a>
+
+      <div style="text-align:center; margin-top:20px; font-size:13px;">
+        <span id="auth-toggle-btn" onclick="window.AnonStore.toggleAuthMode();" style="color:var(--primary); font-weight:700; cursor:pointer;">
+          Don't have an account? Create VIP Account
+        </span>
+      </div>
+
+      <div style="background:var(--bg-subtle); border-radius:var(--radius-sm); padding:12px; margin-top:20px; font-size:12px; color:var(--text-secondary);">
+        <strong>Demo Credentials:</strong><br>
+        • Admin: <code>admin@anon.com</code> / <code>admin123</code><br>
+        • Customer: <code>demo@anon.com</code> / <code>demo123</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal" class="modal-overlay-bg">
+    <div class="modal-card">
+      <button class="modal-close-btn-custom" onclick="window.AnonStore.closeCheckout();">&times;</button>
+      <h3 class="custom-modal-title">Secure Checkout 💳</h3>
+      
+      <form id="checkout-form">
+        <div class="custom-form-group">
+          <label>Full Name</label>
+          <input type="text" id="chk-name" required placeholder="Full Name">
+        </div>
+        <div class="custom-form-group">
+          <label>Mobile Contact Number</label>
+          <input type="tel" id="chk-phone" required placeholder="+1 555 019 2834">
+        </div>
+        <div class="custom-form-group">
+          <label>Shipping Address</label>
+          <input type="text" id="chk-address" required placeholder="Apartment, Street address">
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div class="custom-form-group">
+            <label>City</label>
+            <input type="text" id="chk-city" required placeholder="New York">
+          </div>
+          <div class="custom-form-group">
+            <label>Zip / Postal Code</label>
+            <input type="text" id="chk-pincode" required placeholder="10001">
+          </div>
+        </div>
+        <div class="custom-form-group">
+          <label>Payment Method</label>
+          <select id="chk-payment">
+            <option value="cod">Cash on Delivery (COD)</option>
+            <option value="online">Credit / Debit Card (VISA, Mastercard, RuPay)</option>
+            <option value="online">Instant UPI (GPay / PhonePe / Paytm)</option>
+          </select>
+        </div>
+
+        <div style="background:var(--bg-subtle); border-radius:var(--radius-md); padding:14px; margin:18px 0; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-weight:700;">Total Payable:</span>
+          <span id="chk-payable-amount" style="font-size:1.3rem; font-weight:800; color:var(--primary);">$0.00</span>
+        </div>
+
+        <button type="submit" id="btn-place-order" class="primary-btn">
+          Complete Purchase 🎉
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Celebratory Modal -->
+  <div id="order-success-modal" class="modal-overlay-bg">
+    <div class="modal-card" style="text-align:center;">
+      <div style="width:72px; height:72px; border-radius:50%; background:#dcfce7; color:#15803d; font-size:36px; display:grid; place-items:center; margin:0 auto 16px;">
+        <ion-icon name="checkmark-done-outline"></ion-icon>
+      </div>
+      <h3 style="font-size:1.5rem; font-weight:800; margin-bottom:8px;">Order Confirmed!</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin-bottom:18px;">Thank you for shopping with Anon. Your order has been placed and is being prepared with utmost care.</p>
+      
+      <div style="background:var(--bg-subtle); border-radius:var(--radius-md); padding:14px; margin-bottom:24px; text-align:left; font-size:13px;">
+        <p><strong>Order ID:</strong> <span id="success-order-id" style="color:var(--primary); font-weight:800;">#000</span></p>
+        <p><strong>Amount Paid:</strong> <span id="success-order-total" style="font-weight:700;">$0.00</span></p>
+        <p><strong>Status:</strong> <span style="color:var(--accent-green); font-weight:700;">Processing &amp; Dispatching</span></p>
+      </div>
+
+      <button class="primary-btn" onclick="window.AnonStore.closeOrderSuccessModal();">
+        Continue Shopping 🛍️
+      </button>
+    </div>
+  </div>
+
+  <!-- Past Orders Modal -->
+  <div id="orders-modal" class="modal-overlay-bg">
+    <div class="modal-card modal-card-wide">
+      <button class="modal-close-btn-custom" onclick="window.AnonStore.closeOrdersModal();">&times;</button>
+      <h3 class="custom-modal-title">My Orders 📦</h3>
+      <div id="orders-list-box" style="max-height:420px; overflow-y:auto;">
+        <!-- Injected via backend.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Sticky Navigation -->
+  <div class="mobile-bottom-nav">
+    <a href="#" class="mobile-nav-item active">
+      <ion-icon name="home-outline"></ion-icon>
+      <span>Home</span>
+    </a>
+    <a href="#catalog-start" class="mobile-nav-item">
+      <ion-icon name="grid-outline"></ion-icon>
+      <span>Shop</span>
+    </a>
+    <a href="javascript:void(0)" onclick="window.AnonStore.openWishlistModal();" class="mobile-nav-item">
+      <ion-icon name="heart-outline"></ion-icon>
+      <span>Wishlist</span>
+    </a>
+    <a href="javascript:void(0)" onclick="window.AnonStore.openCartDrawer();" class="mobile-nav-item">
+      <ion-icon name="bag-handle-outline"></ion-icon>
+      <span>Bag</span>
+    </a>
+    <a href="javascript:void(0)" onclick="window.AnonStore.handleUserAccountClick();" class="mobile-nav-item">
+      <ion-icon name="person-outline"></ion-icon>
+      <span>Account</span>
+    </a>
+  </div>
+
+  <!-- Global Toast Notification Pill -->
+  <div id="backend-toast"></div>
+
+  <!-- Core Integration Engine Script -->
+  <script src="./backend.js"></script>
+
+</body>
+</html>

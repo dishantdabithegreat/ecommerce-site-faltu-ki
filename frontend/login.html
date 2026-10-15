@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in | Anon</title>
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
+</head>
+<body class="login-page">
+  <main class="login-shell">
+    <a class="login-brand" href="/">A<span>non.</span></a>
+    <section class="login-panel" aria-labelledby="login-title">
+      <p class="login-kicker">Private client access</p>
+      <h1 id="login-title">Welcome back.</h1>
+      <p class="login-intro">Sign in to manage your bag, saved pieces, and orders.</p>
+      <form id="standalone-login-form">
+        <label class="login-field">Email address<input id="login-email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label class="login-field">Password<input id="login-password" type="password" autocomplete="current-password" required placeholder="Your password"></label>
+        <button class="login-submit" type="submit">Sign in</button>
+        <p id="login-message" class="login-message" role="status"></p>
+      </form>
+      <a class="login-back" href="/">Continue browsing the collection</a>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById("standalone-login-form");
+    const message = document.getElementById("login-message");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = form.querySelector("button");
+      button.disabled = true;
+      message.textContent = "Signing you in...";
+      try {
+        const response = await fetch("/api/auth/login", {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: document.getElementById("login-email").value.trim(),
+            password: document.getElementById("login-password").value
+          })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Unable to sign in");
+        window.location.href = "/";
+      } catch (error) {
+        message.textContent = error.message;
+        button.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
